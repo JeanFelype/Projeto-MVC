@@ -29,5 +29,7 @@ namespace Projeto_Hospital.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<BaseModels.Medico> Medicos { get; set; }
     }
 }
