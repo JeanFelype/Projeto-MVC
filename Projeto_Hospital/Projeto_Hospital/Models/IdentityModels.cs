@@ -31,5 +31,9 @@ namespace Projeto_Hospital.Models
         }
 
         public System.Data.Entity.DbSet<BaseModels.Medico> Medicos { get; set; }
+
+        public System.Data.Entity.DbSet<BaseModels.Paciente> Pacientes { get; set; }
+
+        public System.Data.Entity.DbSet<BaseModels.TipoConsulta> TipoConsultas { get; set; }
     }
 }

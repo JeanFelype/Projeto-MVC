@@ -11,107 +11,107 @@ using Projeto_Hospital.Models;
 
 namespace Projeto_Hospital.Controllers
 {
-    public class MedicosController : Controller
+    public class TipoConsultasController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Medicos
+        // GET: TipoConsultas
         public ActionResult Index()
         {
-            return View(db.Medicos.ToList());
+            return View(db.TipoConsultas.ToList());
         }
 
-        // GET: Medicos/Details/5
+        // GET: TipoConsultas/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Medico medico = db.Medicos.Find(id);
-            if (medico == null)
+            TipoConsulta tipoConsulta = db.TipoConsultas.Find(id);
+            if (tipoConsulta == null)
             {
                 return HttpNotFound();
             }
-            return View(medico);
+            return View(tipoConsulta);
         }
 
-        // GET: Medicos/Create
+        // GET: TipoConsultas/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Medicos/Create
+        // POST: TipoConsultas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MedicoID,Nome,CRM,DataNasc,Login,Senha")] Medico medico)
+        public ActionResult Create([Bind(Include = "TipoConsultaID,Nome,Valor")] TipoConsulta tipoConsulta)
         {
             if (ModelState.IsValid)
             {
-                db.Medicos.Add(medico);
+                db.TipoConsultas.Add(tipoConsulta);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(medico);
+            return View(tipoConsulta);
         }
 
-        // GET: Medicos/Edit/5
+        // GET: TipoConsultas/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Medico medico = db.Medicos.Find(id);
-            if (medico == null)
+            TipoConsulta tipoConsulta = db.TipoConsultas.Find(id);
+            if (tipoConsulta == null)
             {
                 return HttpNotFound();
             }
-            return View(medico);
+            return View(tipoConsulta);
         }
 
-        // POST: Medicos/Edit/5
+        // POST: TipoConsultas/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MedicoID,Nome,CRM,DataNasc,Login,Senha")] Medico medico)
+        public ActionResult Edit([Bind(Include = "TipoConsultaID,Nome,Valor")] TipoConsulta tipoConsulta)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(medico).State = EntityState.Modified;
+                db.Entry(tipoConsulta).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(medico);
+            return View(tipoConsulta);
         }
 
-        // GET: Medicos/Delete/5
+        // GET: TipoConsultas/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Medico medico = db.Medicos.Find(id);
-            if (medico == null)
+            TipoConsulta tipoConsulta = db.TipoConsultas.Find(id);
+            if (tipoConsulta == null)
             {
                 return HttpNotFound();
             }
-            return View(medico);
+            return View(tipoConsulta);
         }
 
-        // POST: Medicos/Delete/5
+        // POST: TipoConsultas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Medico medico = db.Medicos.Find(id);
-            db.Medicos.Remove(medico);
+            TipoConsulta tipoConsulta = db.TipoConsultas.Find(id);
+            db.TipoConsultas.Remove(tipoConsulta);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

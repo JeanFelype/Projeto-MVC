@@ -17,7 +17,8 @@ namespace BaseModels
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatorio!")]
-        public string CPF { get; set; }
+        [MaxLength(8, ErrorMessage = "O tamanho Max. é de 8 Caracteres")]
+        public string CRM { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatorio!")]
         [DataType(DataType.Date)]
