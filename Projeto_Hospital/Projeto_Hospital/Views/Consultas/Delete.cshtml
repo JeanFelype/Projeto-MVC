@@ -1,12 +1,12 @@
 ﻿@model BaseModels.Consulta
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Excluir";
 }
 
-<h2>@ViewBag</h2>
+<h2>@ViewBag.Title</h2>
 
-<h3>Tem certeza que deseja deletar isso?</h3>
+<h3>Tem certeza que deseja Excluir isso?</h3>
 <div>
     <h4>Medico</h4>
     <hr />
@@ -58,7 +58,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Excluir" class="btn btn-success" /> |
             @Html.ActionLink("Voltar a Lista", "Index")
         </div>
     }
