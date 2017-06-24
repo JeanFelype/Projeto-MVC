@@ -6,3 +6,60 @@
 
 <h2>@ViewBag</h2>
 
+<h3>Tem certeza que deseja deletar isso?</h3>
+<div>
+    <h4>Medico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.paciente.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paciente.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.medico.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.medico.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoConsulta.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoConsulta.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoConsulta.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoConsulta.Valor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataConsulta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataConsulta)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar a Lista", "Index")
+        </div>
+    }
+</div>
