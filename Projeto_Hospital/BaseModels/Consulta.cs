@@ -13,13 +13,17 @@ namespace BaseModels
         public int ConsultaID { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatorio!")]
-        public Paciente paciente { get; set; }
+
+        public int PacienteID { get; set; }
+        public virtual Paciente _Paciente { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatorio!")]
-        public Medico medico { get; set; }
-
+        public int MedicoID { get; set; }
+        public virtual Medico _Medico { get; set; }
+       
         [Required(ErrorMessage = "Campo obrigatorio!")]
-        public TipoConsulta tipoConsulta { get; set; }
+        public int TipoConsultaID { get; set; }
+        public virtual TipoConsulta _TipoConsulta { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatorio!")]
         [DataType(DataType.Date)]
